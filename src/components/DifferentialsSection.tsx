@@ -26,21 +26,18 @@ const diffs = [
 ];
 
 const DifferentialsSection = () => (
-  <section id="diferenciais" className="relative py-24 md:py-32 overflow-hidden">
-    <div className="absolute inset-0 dot-grid opacity-30" />
-
-    <div className="container relative">
+  <section id="diferenciais" className="py-20 md:py-28">
+    <div className="container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="text-center mb-14"
       >
-        <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-4">Diferenciais</span>
-        <h2 className="text-3xl md:text-[2.75rem] font-extrabold mb-4 leading-tight">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
           Diferenciais <span className="text-primary">Técnicos</span>
         </h2>
-        <p className="text-muted-foreground max-w-xl mx-auto text-lg font-light">
+        <p className="text-muted-foreground max-w-xl mx-auto">
           Tecnologia de ponta adaptada para a realidade do corretor brasileiro.
         </p>
       </motion.div>
@@ -54,12 +51,12 @@ const DifferentialsSection = () => (
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
           >
-            <TiltCard className="group rounded-xl bg-background p-7 shadow-card text-center gradient-border h-full">
-              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:shadow-glow transition-shadow duration-500">
-                <d.icon className="w-7 h-7 text-primary" />
+            <TiltCard className="group rounded-xl bg-card p-7 shadow-card text-center hover:shadow-elevated transition-shadow h-full">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                <d.icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="font-bold mb-2">{d.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed font-light">{d.description}</p>
+              <h3 className="font-semibold mb-2">{d.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{d.description}</p>
             </TiltCard>
           </motion.div>
         ))}

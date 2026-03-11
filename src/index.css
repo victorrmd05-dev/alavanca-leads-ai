@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,52 +6,45 @@
 
 @layer base {
   :root {
-    --background: 200 20% 98%;
-    --foreground: 210 40% 8%;
+    --background: 0 0% 100%;
+    --foreground: 220 30% 12%;
 
-    --card: 200 20% 96%;
-    --card-foreground: 210 40% 8%;
+    --card: 210 25% 97%;
+    --card-foreground: 220 30% 12%;
 
-    --popover: 200 20% 98%;
-    --popover-foreground: 210 40% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 12%;
 
-    --primary: 164 80% 32%;
+    --primary: 168 72% 36%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 164 75% 42%;
+    --primary-glow: 168 72% 46%;
 
-    --secondary: 200 15% 93%;
-    --secondary-foreground: 210 40% 8%;
+    --secondary: 210 25% 95%;
+    --secondary-foreground: 220 30% 12%;
 
-    --muted: 200 12% 94%;
-    --muted-foreground: 210 10% 44%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 10% 46%;
 
-    --accent: 270 60% 55%;
+    --accent: 256 67% 58%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 200 15% 88%;
-    --input: 200 15% 88%;
-    --ring: 164 80% 32%;
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 168 72% 36%;
 
-    --radius: 0.875rem;
+    --radius: 0.75rem;
 
-    /* Atmospheric gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(164, 80%, 32%), hsl(164, 75%, 42%));
-    --gradient-hero: linear-gradient(160deg, hsl(210, 30%, 96%) 0%, hsl(164, 60%, 94%) 40%, hsl(270, 40%, 95%) 100%);
-    --gradient-section: linear-gradient(180deg, hsl(200, 15%, 95%) 0%, hsl(200, 20%, 98%) 100%);
-    --gradient-dark: linear-gradient(160deg, hsl(210, 40%, 8%) 0%, hsl(210, 35%, 14%) 100%);
-    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.7), hsl(0 0% 100% / 0.3));
-    --gradient-accent-line: linear-gradient(90deg, hsl(164, 80%, 32%), hsl(270, 60%, 55%), hsl(164, 80%, 32%));
+    --gradient-primary: linear-gradient(135deg, hsl(168, 72%, 36%), hsl(168, 72%, 46%));
+    --gradient-hero: linear-gradient(160deg, hsl(210, 25%, 97%) 0%, hsl(168, 72%, 96%) 50%, hsl(256, 67%, 96%) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(210, 25%, 97%) 0%, hsl(0, 0%, 100%) 100%);
+    --shadow-card: 0 4px 24px -4px hsl(220 30% 12% / 0.06);
+    --shadow-elevated: 0 12px 40px -8px hsl(220 30% 12% / 0.1);
 
-    /* Shadows with colored tints */
-    --shadow-card: 0 4px 24px -4px hsl(210 40% 8% / 0.06);
-    --shadow-elevated: 0 16px 48px -8px hsl(164 80% 32% / 0.12), 0 8px 24px -4px hsl(210 40% 8% / 0.06);
-    --shadow-glow: 0 0 40px -8px hsl(164 80% 32% / 0.25);
-
-    --font-heading: 'Syne', system-ui, sans-serif;
-    --font-body: 'Outfit', system-ui, sans-serif;
+    --font-heading: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -75,14 +68,12 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
   .font-heading {
     font-family: var(--font-heading);
-    letter-spacing: -0.02em;
   }
   .font-body {
     font-family: var(--font-body);
@@ -93,62 +84,10 @@
   .gradient-section {
     background: var(--gradient-section);
   }
-  .gradient-dark {
-    background: var(--gradient-dark);
-  }
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
   .shadow-elevated {
     box-shadow: var(--shadow-elevated);
-  }
-  .shadow-glow {
-    box-shadow: var(--shadow-glow);
-  }
-
-  /* Glass morphism */
-  .glass {
-    background: var(--gradient-glass);
-    backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid hsl(0 0% 100% / 0.3);
-  }
-
-  /* Noise texture overlay */
-  .noise::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 128px 128px;
-  }
-
-  /* Animated gradient border */
-  .gradient-border {
-    position: relative;
-  }
-  .gradient-border::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: var(--gradient-accent-line);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-  .gradient-border:hover::before {
-    opacity: 1;
-  }
-
-  /* Dot grid pattern */
-  .dot-grid {
-    background-image: radial-gradient(circle, hsl(var(--primary) / 0.08) 1px, transparent 1px);
-    background-size: 24px 24px;
   }
 }
