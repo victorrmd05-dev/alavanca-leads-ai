@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Zap, LayoutDashboard, RefreshCw, CalendarCheck } from "lucide-react";
+import TiltCard from "./TiltCard";
 
 const features = [
   {
@@ -53,15 +54,16 @@ const SolutionSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="flex gap-5 rounded-xl bg-card p-7 shadow-card hover:shadow-elevated transition-shadow"
           >
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-              <f.icon className="w-6 h-6 text-primary" />
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-2">{f.title}</h3>
-              <p className="text-muted-foreground leading-relaxed text-sm">{f.description}</p>
-            </div>
+            <TiltCard className="group flex gap-5 rounded-xl bg-card p-7 shadow-card hover:shadow-elevated transition-shadow h-full">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                <f.icon className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-2">{f.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">{f.description}</p>
+              </div>
+            </TiltCard>
           </motion.div>
         ))}
       </div>
